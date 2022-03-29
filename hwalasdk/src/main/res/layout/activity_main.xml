@@ -1,0 +1,102 @@
+<ViewFlipper android:id="@+id/viewFlipper"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/strat_screen" />
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        layout="@layout/contact_list_screen" />
+
+</ViewFlipper>
+
+<!--    <?xml version="1.0" encoding="utf-8"?>-->
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--xmlns:card_view="http://schemas.android.com/tools"-->
+<!--android:paddingTop="@dimen/keyboread_padding_top"-->
+<!--android:background="@color/ray"-->
+<!--android:orientation="vertical">-->
+
+<!--<LinearLayout-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="@color/ray"-->
+<!--    android:orientation="vertical">-->
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/card_view_home_image"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="0.6"-->
+<!--        card_view:cardCornerRadius="@dimen/corner_radius"-->
+<!--        card_view:cardElevation="@dimen/card_elevation"-->
+<!--        card_view:cardUseCompatPadding="true"-->
+<!--        card_view:elevation="@dimen/elevation">-->
+<!--        <ImageView-->
+<!--            android:id="@+id/ivKeyboard"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@color/ray"-->
+<!--            android:src="@mipmap/onboarding3x" />-->
+<!--    </androidx.cardview.widget.CardView>-->
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/card_view_logo"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="0.2"-->
+<!--        card_view:cardCornerRadius="@dimen/corner_radius"-->
+<!--        card_view:cardElevation="@dimen/card_elevation"-->
+<!--        app:cardBackgroundColor="@color/ray"-->
+<!--        card_view:elevation="@dimen/elevation"-->
+
+<!--        android:background="@color/Red"-->
+<!--        android:layout_marginEnd="@dimen/left_space"-->
+<!--        android:layout_marginStart="@dimen/right_space_logo"-->
+<!--        android:layout_marginTop="@dimen/top_space_logo">-->
+<!--        <ImageView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+
+<!--            android:background="@color/ray"-->
+<!--            android:src="@drawable/ic_logos_hwala" />-->
+<!--    </androidx.cardview.widget.CardView>-->
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:id="@+id/card_view_bt"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="0.2"-->
+<!--        android:background="@color/ray"-->
+<!--        card_view:cardCornerRadius="@dimen/corner_radius"-->
+<!--        card_view:cardElevation="30dp"-->
+
+<!--        card_view:elevation="@dimen/elevation"-->
+<!--        android:layout_marginEnd="@dimen/left_space"-->
+<!--        android:layout_marginStart="@dimen/right_space_logo"-->
+<!--        android:layout_marginTop="@dimen/top_space_logo">-->
+<!--        <Button-->
+<!--            android:id="@+id/bt_transfer_money"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:textColor="@color/omega"-->
+<!--            android:background="@color/Red"-->
+<!--            android:text="@string/bt_transfer_money"></Button>-->
+<!--    </androidx.cardview.widget.CardView>-->
+<!--</LinearLayout>-->
+
+<!--&lt;!&ndash;    <android.inputmethodservice.KeyboardView&ndash;&gt;-->
+<!--&lt;!&ndash;        xmlns:android="http://schemas.android.com/apk/res/android"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:id="@+id/keyboard_view"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:keyPreviewLayout="@layout/key_preview"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:background="@color/ray"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_alignParentBottom="true">&ndash;&gt;-->
+
+<!--&lt;!&ndash;    </android.inputmethodservice.KeyboardView>&ndash;&gt;-->
+
+<!--</LinearLayout>-->

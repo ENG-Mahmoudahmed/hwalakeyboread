@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Hwala Keyboread</string>
+    <string name="bt_transfer_money">Transfer money</string>
+    <string name="tv_enter_number">Enter number manually</string>
+    <string name="bt_proceed">Proceed</string>
+    <string name="tv_select">Select from your contacts</string>
+    <string name="tv_open">Open contacts list</string>
+</resources>

@@ -1,0 +1,3 @@
+rootProject.name = "hwalakeyboread"
+include ':app'
+include ':hwalasdk'

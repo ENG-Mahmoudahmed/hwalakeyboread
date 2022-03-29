@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:paddingTop="@dimen/keyboread_padding_top"
+    android:background="@color/omega"
+    android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@color/positive" />
+        <ImageView
+            android:id="@+id/ivKeyboard"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/ray"
+            android:src="@mipmap/onboarding3x" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:layout_margin="20dp"
+            android:textColor="@color/omega"
+            android:background="@drawable/imagecorner"
+            android:src="@drawable/ic_logos_hwala" />
+        <Button
+            android:id="@+id/bt_transfer_money"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:layout_margin="20dp"
+            android:textColor="@color/omega"
+            android:background="@drawable/hwalabutton"
+            android:text="@string/bt_transfer_money"/>
+
+
+    <!--    <android.inputmethodservice.KeyboardView-->
+    <!--        xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--        android:id="@+id/keyboard_view"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:keyPreviewLayout="@layout/key_preview"-->
+    <!--        android:background="@color/ray"-->
+    <!--        android:layout_alignParentBottom="true">-->
+
+    <!--    </android.inputmethodservice.KeyboardView>-->
+
+</LinearLayout>

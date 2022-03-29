@@ -1,0 +1,24 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="tiny">4dp</dimen>
+    <dimen name="xsml">8dp</dimen>
+    <dimen name="sml">14dp</dimen>
+    <dimen name="med">18dp</dimen>
+    <dimen name="reg">24dp</dimen>
+    <dimen name="lrg">34dp</dimen>
+    <dimen name="left_space">100dp</dimen>
+    <dimen name="right_space_logo">100dp</dimen>
+    <dimen name="top_space_logo">10dp</dimen>
+    <dimen name="corner_radius">50dp</dimen>
+    <dimen name="elevation">10dp</dimen>
+    <dimen name="card_elevation">10dp</dimen>
+    <dimen name="keyboread_padding_top">100dp</dimen>
+
+    <dimen name="right_space_tiny">40dp</dimen>
+    <dimen name="right_space_xsml">80dp</dimen>
+    <dimen name="right_space_sml">140dp</dimen>
+    <dimen name="right_space_med">180dp</dimen>
+    <dimen name="right_space_reg">240dp</dimen>
+    <dimen name="right_space_lrg">340dp</dimen>
+
+</resources>
