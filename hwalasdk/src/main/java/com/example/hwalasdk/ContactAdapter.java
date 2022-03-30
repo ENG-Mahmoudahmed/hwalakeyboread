@@ -34,15 +34,8 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         final ContactDTO name = mDataset.get(position);
-        holder.txtHeader.setText(mDataset.get(position).getDisplayName());
-//        holder.txtHeader.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                remove(name);
-//            }
-//        });
-
-//        holder.txtFooter.setText("Footer: " + mDataset.get(position));
+        holder.txtHeader.setText(mDataset.get(position).getFamilyName());
+        holder.txtFooter.setText(mDataset.get(position).getDisplayName());
     }
     public void add(int position, ContactDTO item) {
         mDataset.add(position, item);
@@ -72,7 +65,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
         public ViewHolder(View v) {
             super(v);
             txtHeader = (TextView) v.findViewById(R.id.firstLine);
-//            txtFooter = (TextView) v.findViewById(R.id.secondLine);
+            txtFooter = (TextView) v.findViewById(R.id.secondLine);
         }
 
 

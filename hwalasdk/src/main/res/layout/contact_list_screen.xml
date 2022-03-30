@@ -6,7 +6,10 @@
     xmlns:card_view="http://schemas.android.com/tools"
     android:paddingTop="@dimen/keyboread_padding_top"
     android:orientation="vertical">
-
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@color/positive" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -20,83 +23,127 @@
             android:layout_margin="20dp"
             android:src="@drawable/ic_back"></ImageView>
         <androidx.cardview.widget.CardView
-            android:id="@+id/card_view_contact"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view_outer_contact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/ray"
-            card_view:cardCornerRadius="100dp"
-            card_view:cardElevation="@dimen/card_elevation"
-            card_view:elevation="@dimen/elevation">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/omega"
-                android:paddingLeft="@dimen/lrg"
-                android:paddingRight="@dimen/lrg"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tv_select"></TextView>
-            <LinearLayout
+            android:layout_gravity="center"
+            android:layout_marginBottom="15dp"
+            card_view:cardBackgroundColor="@android:color/transparent"
+            card_view:cardCornerRadius="10dp"
+            card_view:cardElevation="3dp" >
+
+            <androidx.cardview.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view_inner_contact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
-                <ImageView
-                    android:id="@+id/img_contact"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_contacts"></ImageView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/tv_open"></TextView>
-            </LinearLayout>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_view_enter_number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/ray"
-            android:gravity="center"
-            card_view:cardCornerRadius="100dp"
-            card_view:cardElevation="@dimen/card_elevation"
-            card_view:elevation="@dimen/elevation">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:background="@color/ray"
-                android:paddingLeft="@dimen/lrg"
-                android:paddingRight="@dimen/lrg"
-                >
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/omega"
-                    android:text="@string/tv_enter_number"></TextView>
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                card_view:cardBackgroundColor="@color/omega"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="0dp" >
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/ic_icons_phone"></ImageView>
-                    <EditText
-                        android:id="@+id/ed_contact_number"
+                    android:background="@color/omega"
+                    android:padding="@dimen/lrg"
+                    android:orientation="vertical">
+                    <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:inputType="number"
-                        ></EditText>
+                        android:layout_height="wrap_content"
+                        style="@style/AppTheme"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/tv_select"></TextView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/img_contact"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:background="@drawable/imagecorner"
+                            android:src="@drawable/ic_contacts"
+                            app:civ_border_color="@color/omega"
+                            app:civ_border_width="2dp"
+                            >
+                        </de.hdodenhof.circleimageview.CircleImageView>
+                        <TextView
+                            android:id="@+id/tv_contact"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/AppTheme"
+
+                            android:text="@string/tv_open"></TextView>
+                    </LinearLayout>
                 </LinearLayout>
-
-            </LinearLayout>
-
+            </androidx.cardview.widget.CardView>
         </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view_outer_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            card_view:cardBackgroundColor="@android:color/transparent"
+            card_view:cardCornerRadius="10dp"
+            card_view:cardElevation="3dp" >
+
+            <androidx.cardview.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view_inner_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="3dp"
+                card_view:cardBackgroundColor="@color/omega"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="0dp" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/ray"
+                    android:padding="@dimen/lrg"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/omega"
+                        style="@style/AppTheme"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/tv_enter_number"></TextView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="15dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/imagecorner"
+                            android:src="@drawable/ic_icons_phone"></ImageView>
+                        <EditText
+                            android:id="@+id/ed_contact_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:hint="@string/et_hint"
+                            style="@style/AppTheme"
+                            ></EditText>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+
+
         <Button
             android:id="@+id/bt_transfer_money"
             android:layout_width="match_parent"
@@ -104,6 +151,7 @@
             android:layout_margin="30dp"
             android:textColor="@color/omega"
             android:background="@drawable/hwalabutton"
+            style="@style/AppTheme"
             android:text="@string/bt_proceed"/>
 
     </LinearLayout>

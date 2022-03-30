@@ -2,6 +2,7 @@ package com.example.hwalasdk;
 
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
@@ -20,6 +21,7 @@ import android.view.inputmethod.InputConnection;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
@@ -32,6 +34,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MyInputMethodService extends InputMethodService implements KeyboardView.OnKeyboardActionListener {
     private static String TAG_ANDROID_CONTACTS="1";
@@ -118,7 +122,7 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
                 }
             }
         });
-       ImageView img_contact = view2.findViewById(R.id.img_contact);
+        CircleImageView img_contact = view2.findViewById(R.id.img_contact);
         img_contact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -128,14 +132,25 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
                 }
             }
         });
-
-        Button loadButton = (Button)view2.findViewById(R.id.bt_transfer_money);
-        loadButton.setOnClickListener(new View.OnClickListener() {
+        TextView tv_contact = view2.findViewById(R.id.tv_contact);
+        tv_contact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                try {
+                    initContactScreen();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
+
+//        Button loadButton = (Button)view2.findViewById(R.id.bt_porced);
+//        loadButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
         text= (EditText) view2.findViewById(R.id.ed_contact_number);
         text.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -150,6 +165,7 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
         kv.setOnKeyboardActionListener(this);
     }
     public void initContactScreen(){
+
         View view2 = getLayoutInflater().inflate(R.layout.second_screen, null);
         getWindow().setContentView(view2);
         RecyclerView ContactRecyclerView = (RecyclerView) view2.findViewById(R.id.recyclview_contacts);
@@ -162,6 +178,9 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
         LinearLayoutManager  mLayoutManager = new LinearLayoutManager(this);
         ContactRecyclerView.setLayoutManager(mLayoutManager);
 
+        ContactAdapter contactAdapter = new ContactAdapter(getAllContactList());
+        ContactRecyclerView.setAdapter(contactAdapter);
+
         imback = view2.findViewById(R.id.im_back);
         imback.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -172,34 +191,15 @@ public class MyInputMethodService extends InputMethodService implements Keyboard
                 }
             }
         });
-        ImageView img_contact = view2.findViewById(R.id.img_contact);
-        img_contact.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    ContactAdapter contactAdapter = new ContactAdapter(getAllContactList());
-                    ContactRecyclerView.setAdapter(contactAdapter);
-//                    if(!hasPhoneContactsPermission(Manifest.permission.READ_CONTACTS))
-//                    {
-//                        requestPermission(Manifest.permission.READ_CONTACTS);
-//                    }else {
-//
-//                        // specify an adapter (see also next example)
-//
-////                    Toast.makeText(getApplicationContext(), "Contact data has been printed in the android monitor log..", Toast.LENGTH_SHORT).show();
-//                    }
-                } catch (Exception e) {
-                }
-            }
-        });
 
-        Button loadButton = (Button)view2.findViewById(R.id.bt_porced);
-        loadButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-            }
-        });
+//        Button loadButton = (Button)view2.findViewById(R.id.bt_porced);
+//        loadButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
     }
     public  ArrayList<ContactDTO> getAllContactList(){
         ArrayList<ContactDTO> re=new ArrayList<>();
