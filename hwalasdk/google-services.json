@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "884504647333",
+    "project_id": "hwala-3d275",
+    "storage_bucket": "hwala-3d275.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884504647333:android:bc1eca16c599a47f429f4c",
+        "android_client_info": {
+          "package_name": "com.example.hwalasdk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884504647333-4gofnhecqo3hc2lkr0gdk4gbb54skknr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFLtgNNU53aUMRMSAj0d4IKFvQ_mvN3ng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884504647333-4gofnhecqo3hc2lkr0gdk4gbb54skknr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

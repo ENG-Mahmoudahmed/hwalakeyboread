@@ -6,6 +6,8 @@
     xmlns:card_view="http://schemas.android.com/tools"
     android:paddingTop="@dimen/keyboread_padding_top"
     android:background="@color/omega"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
     android:orientation="vertical">
 
 

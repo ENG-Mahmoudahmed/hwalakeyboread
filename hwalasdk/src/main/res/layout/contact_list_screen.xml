@@ -4,6 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
     android:paddingTop="@dimen/keyboread_padding_top"
     android:orientation="vertical">
     <ImageView
@@ -157,12 +159,12 @@
     </LinearLayout>
 
 
-    <android.inputmethodservice.KeyboardView
+    <com.example.hwalasdk.HwalaKeyboard
         android:id="@+id/keyboard_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
         android:layout_alignParentBottom="true"
         android:keyPreviewLayout="@layout/key_preview"
-        ></android.inputmethodservice.KeyboardView>
+        ></com.example.hwalasdk.HwalaKeyboard>
 </LinearLayout>
