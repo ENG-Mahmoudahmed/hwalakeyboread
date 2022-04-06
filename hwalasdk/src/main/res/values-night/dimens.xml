@@ -12,7 +12,7 @@
     <dimen name="corner_radius">50dp</dimen>
     <dimen name="elevation">10dp</dimen>
     <dimen name="card_elevation">10dp</dimen>
-    <dimen name="keyboread_padding_top">100dp</dimen>
+    <dimen name="keyboread_padding_top">1dp</dimen>
 
     <dimen name="right_space_tiny">40dp</dimen>
     <dimen name="right_space_xsml">80dp</dimen>

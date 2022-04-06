@@ -5,11 +5,11 @@
     <include
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        layout="@layout/strat_screen" />
+        layout="@layout/screen_1" />
     <include
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        layout="@layout/contact_list_screen" />
+        layout="@layout/screen_2" />
 
 </ViewFlipper>
 

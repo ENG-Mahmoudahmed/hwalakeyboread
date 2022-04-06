@@ -1,0 +1,7 @@
+<ImageView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/im_back"
+    android:layout_width="@dimen/iv_back_h_w"
+    android:layout_height="@dimen/iv_back_h_w"
+    android:layout_margin="@dimen/iv_back_m"
+    android:src="@drawable/ic_back"></ImageView>

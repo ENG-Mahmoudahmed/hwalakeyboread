@@ -12,7 +12,7 @@
     <dimen name="corner_radius">50dp</dimen>
     <dimen name="elevation">10dp</dimen>
     <dimen name="card_elevation">10dp</dimen>
-    <dimen name="keyboread_padding_top">100dp</dimen>
+    <dimen name="keyboread_padding_top">1dp</dimen>
 
 
     <dimen name="right_space_tiny">40dp</dimen>
@@ -21,5 +21,16 @@
     <dimen name="right_space_med">180dp</dimen>
     <dimen name="right_space_reg">240dp</dimen>
     <dimen name="right_space_lrg">340dp</dimen>
+    <dimen name="screen_5_space_pin_code">20dp</dimen>
+
+
+    <dimen name="iv_back_h_w">30dp</dimen>
+    <dimen name="iv_back_h">30dp</dimen>
+    <dimen name="iv_back_m">20dp</dimen>
+
+    <dimen name="iv_next_h">50dp</dimen>
+    <dimen name="iv_next_w">250dp</dimen>
+    <dimen name="iv_next_m">30dp</dimen>
+
 
 </resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/keyboread_padding_top"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:background="@color/ray"
+            android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="@color/positive" />
+        <ImageView
+            android:id="@+id/ivKeyboard"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.8"
+            android:background="@color/ray"
+            android:src="@mipmap/onboarding3x" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.1"
+            android:layout_margin="20dp"
+            android:textColor="@color/omega"
+            android:background="@drawable/imagecorner"
+            android:src="@drawable/ic_logos_hwala" />
+        <Button
+            android:id="@+id/bt_next_screen"
+            style="@style/next_button_style"
+            android:text="@string/bt_transfer_money"/>
+</LinearLayout>
+
+</LinearLayout>

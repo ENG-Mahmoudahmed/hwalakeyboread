@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.hwalakeyboread" parent="Theme.AppCompat.Light">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimary">@color/ray</item>
 
         <!-- Customize your theme here. -->
     </style>
@@ -11,6 +11,16 @@
         <item name="android:buttonStyle">@style/RobotoButtonStyle</item>
     </style>
 
+    <style name="next_button_style" parent="Theme.AppCompat.Light">
+        <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
+        <item name="android:buttonStyle">@style/RobotoButtonStyle</item>
+
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/iv_next_h</item>
+        <item name="android:layout_margin">@dimen/iv_next_m</item>
+        <item name="android:textColor">@color/omega</item>
+        <item name="android:background">@drawable/hwalabutton</item>
+    </style>
     <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
         <item name="android:fontFamily">Mulish</item>
     </style>

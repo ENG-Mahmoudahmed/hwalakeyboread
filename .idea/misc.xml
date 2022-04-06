@@ -4,12 +4,27 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/G/hwalakeyboread/hwalasdk/src/main/res/drawable/hwalabutton.xml" value="0.37083333333333335" />
+        <entry key="..\:/G/hwalakeyboread/hwalasdk/src/main/res/drawable/ic_logos_hwala.xml" value="0.25416666666666665" />
+        <entry key="..\:/G/hwalakeyboread/hwalasdk/src/main/res/drawable/ic_transfered_successfully_background.xml" value="0.23794871794871794" />
         <entry key="..\:/G/hwalakeyboread/hwalasdk/src/main/res/drawable/imagecorner.xml" value="0.37083333333333335" />
+        <entry key="..\:/G/hwalakeyboread/hwalasdk/src/main/res/layout/back.xml" value="0.19427083333333334" />
         <entry key="..\:/G/hwalakeyboread/hwalasdk/src/main/res/layout/contact_cell.xml" value="0.47048903878583476" />
         <entry key="..\:/G/hwalakeyboread/hwalasdk/src/main/res/layout/contact_list_screen.xml" value="0.25864453665283543" />
+        <entry key="..\:/G/hwalakeyboread/hwalasdk/src/main/res/layout/fourth_screen.xml" value="0.2390625" />
+        <entry key="..\:/G/hwalakeyboread/hwalasdk/src/main/res/layout/key_preview.xml" value="0.3546875" />
         <entry key="..\:/G/hwalakeyboread/hwalasdk/src/main/res/layout/keyboard.xml" value="0.3546875" />
+        <entry key="..\:/G/hwalakeyboread/hwalasdk/src/main/res/layout/next.xml" value="0.2682291666666667" />
+        <entry key="..\:/G/hwalakeyboread/hwalasdk/src/main/res/layout/screen_1.xml" value="0.1" />
+        <entry key="..\:/G/hwalakeyboread/hwalasdk/src/main/res/layout/screen_2.xml" value="0.1" />
+        <entry key="..\:/G/hwalakeyboread/hwalasdk/src/main/res/layout/screen_3.xml" value="0.1" />
+        <entry key="..\:/G/hwalakeyboread/hwalasdk/src/main/res/layout/screen_4.xml" value="0.2721238938053097" />
+        <entry key="..\:/G/hwalakeyboread/hwalasdk/src/main/res/layout/screen_5.xml" value="0.22" />
+        <entry key="..\:/G/hwalakeyboread/hwalasdk/src/main/res/layout/screen_6.xml" value="0.22" />
+        <entry key="..\:/G/hwalakeyboread/hwalasdk/src/main/res/layout/screen_7.xml" value="0.1" />
         <entry key="..\:/G/hwalakeyboread/hwalasdk/src/main/res/layout/second_screen.xml" value="0.17198581560283688" />
-        <entry key="..\:/G/hwalakeyboread/hwalasdk/src/main/res/layout/strat_screen.xml" value="0.25815217391304346" />
+        <entry key="..\:/G/hwalakeyboread/hwalasdk/src/main/res/layout/strat_screen.xml" value="0.1" />
+        <entry key="..\:/G/hwalakeyboread/hwalasdk/src/main/res/layout/test.xml" value="0.3546875" />
+        <entry key="..\:/G/hwalakeyboread/hwalasdk/src/main/res/layout/third_screen.xml" value="0.3546875" />
         <entry key="..\:/Users/ma/Downloads/TEStKEyboread/TEStKEyboread/app/src/main/res/drawable/ic_launcher_background.xml" value="0.37083333333333335" />
         <entry key="..\:/Users/ma/Downloads/TEStKEyboread/TEStKEyboread/app/src/main/res/layout/activity_main.xml" value="0.17249240121580547" />
         <entry key="..\:/Users/ma/Downloads/TEStKEyboread/TEStKEyboread/hwalasdk/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.37083333333333335" />

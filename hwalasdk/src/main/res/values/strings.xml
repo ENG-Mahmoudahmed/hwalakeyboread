@@ -7,4 +7,23 @@
     <string name="tv_open">Open contacts list</string>
     <string name="tv_transfer_money">Transfer money to</string>
     <string name="et_hint">Mobile number</string>
+
+
+    <string name="screen_4_transfer_money_from">Transfer from</string>
+    <string name="screen_4_enter_amount">Enter amount</string>
+    <string name="screen_4_change">Change</string>
+    <string name="screen_4_hint_money">Ex,1000</string>
+    <string name="screen_4_e_wallet">E-wallet</string>
+
+    <string name="screen_5_header">We have sent an OTP to your number</string>
+    <string name="screen_5_disc">In order to verify your e-wallet account, we have sent you an OTP to this number +20 1234567891</string>
+    <string name="screen_5_resend">Resend</string>
+    <string name="screen_5_make_transaction">Make transaction</string>
+
+    <string name="screen_6_successful_transaction">Your transaction was successful</string>
+    <string name="screen_6_successful_transaction_details">1000 EGP was sent to this number +20 1234567891</string>
+    <string name="screen_6_successful_transaction_ok">Ok</string>
+
+    <string name="successful_transaction_message">I have sent you EGP 1,000 thr …</string>
+
 </resources>
