@@ -1,6 +1,5 @@
 package com.example.hwalasdk;
-import java.util.ArrayList;
-import java.util.List;
+
 public class ContactDTO {
     // Contact belong group fields.
     private long groupId;
@@ -11,7 +10,7 @@ public class ContactDTO {
     // Contact structured name fields.
     private String displayName;
     private String givenName;
-    private String familyName;
+    private String number;
     // Contact nickname fields.
     private String nickName;
     // Contact organization fields.
@@ -71,11 +70,11 @@ public class ContactDTO {
     public void setGivenName(String givenName) {
         this.givenName = givenName;
     }
-    public String getFamilyName() {
-        return familyName;
+    public String getNumber() {
+        return number;
     }
-    public void setFamilyName(String familyName) {
-        this.familyName = familyName;
+    public void setNumber(String number) {
+        this.number = number;
     }
     public String getNickName() {
         return nickName;

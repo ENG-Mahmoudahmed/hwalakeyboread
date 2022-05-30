@@ -1,0 +1,5 @@
+<resources>
+    <declare-styleable name="HwalaKeyboardChar">
+        <attr name="ISHwalaKeyboardChar" format="boolean" />
+    </declare-styleable>
+</resources>

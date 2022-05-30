@@ -1,158 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:card_view="http://schemas.android.com/tools"
-    android:layout_centerHorizontal="true"
-    android:layout_centerVertical="true"
-    android:paddingTop="@dimen/keyboread_padding_top"
+    android:layout_height="match_parent"
     android:orientation="vertical">
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:background="@color/positive" />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="350dp"
         android:background="@color/ray"
         android:orientation="vertical">
         <include layout="@layout/back"></include>
-        <androidx.cardview.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/card_view_outer_contact"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="15dp"
-            card_view:cardBackgroundColor="@android:color/transparent"
-            card_view:cardCornerRadius="10dp"
-            card_view:cardElevation="3dp" >
-
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_outer_contact"
+            style="@style/card_view_style_back">
             <androidx.cardview.widget.CardView
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/card_view_inner_contact"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="3dp"
-                card_view:cardBackgroundColor="@color/omega"
-                card_view:cardCornerRadius="10dp"
-                card_view:cardElevation="0dp" >
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/omega"
-                    android:padding="@dimen/lrg"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/AppTheme"
-                        android:layout_marginBottom="10dp"
-                        android:text="@string/tv_select"></TextView>
+                style="@style/card_view_style">
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
+                        style="@style/Linear_Layout_style_horizontal"
+                        android:layout_gravity="center"
                         >
                         <de.hdodenhof.circleimageview.CircleImageView
-                            android:id="@+id/img_contact"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="15dp"
-                            android:background="@drawable/imagecorner"
+                            android:id="@+id/img_contact"
                             android:src="@drawable/ic_contacts"
-                            app:civ_border_color="@color/omega"
-                            app:civ_border_width="2dp"
-                            >
+                            style="@style/circle_image_view_style_">
                         </de.hdodenhof.circleimageview.CircleImageView>
                         <TextView
+                            android:layout_width="wrap_content"
                             android:id="@+id/tv_contact"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            style="@style/AppTheme"
-
-                            android:text="@string/tv_open"></TextView>
+                            android:text="@string/tv_select"
+                            style="@style/text_view_style"></TextView>
                     </LinearLayout>
-                </LinearLayout>
             </androidx.cardview.widget.CardView>
         </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/card_view_outer_number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+        </LinearLayout>
 
-            card_view:cardBackgroundColor="@android:color/transparent"
-            card_view:cardCornerRadius="10dp"
-            card_view:cardElevation="3dp" >
-
-            <androidx.cardview.widget.CardView
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/card_view_inner_number"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="3dp"
-                card_view:cardBackgroundColor="@color/omega"
-                card_view:cardCornerRadius="10dp"
-                card_view:cardElevation="0dp" >
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="@color/ray"
-                    android:padding="@dimen/lrg"
-                    >
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/omega"
-                        style="@style/AppTheme"
-                        android:layout_marginBottom="10dp"
-                        android:text="@string/tv_enter_number"></TextView>
+<!--        <androidx.cardview.widget.CardView-->
+<!--            style="@style/card_view_style_back" >-->
+<!--            <androidx.cardview.widget.CardView-->
+<!--                style="@style/card_view_style" >-->
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
+                        style="@style/Linear_Layout_style_horizontal"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@color/ray"
+                        android:gravity="center"
                         >
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="15dp"
-                            android:layout_gravity="center"
-                            android:background="@drawable/imagecorner"
-                            android:src="@drawable/ic_icons_phone"></ImageView>
                         <EditText
-                            android:id="@+id/ed_contact_number"
-                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:id="@+id/ed_contact_number"
                             android:inputType="number"
-                            android:hint="@string/et_hint"
-                            style="@style/AppTheme"
+                            android:drawablePadding="20dp"
+                            android:drawableLeft="@drawable/ic_icons_phone"
+                            android:hint="@string/tv_enter_number"
+                            android:background="@color/ray"
+                            android:focusedByDefault="true"
                             ></EditText>
                     </LinearLayout>
+<!--            </androidx.cardview.widget.CardView>-->
+<!--        </androidx.cardview.widget.CardView>-->
 
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-        </androidx.cardview.widget.CardView>
         <Button
             android:id="@+id/bt_next_screen"
             style="@style/next_button_style"
+            android:layout_marginBottom="@dimen/screen_5_space_pin_code"
             android:text="@string/bt_proceed"/>
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/screen_5_space_pin_code"-->
+<!--            android:gravity="center"-->
+<!--            android:background="@drawable/round"-->
+<!--            android:text="Please select a contact or enter mobile number to proceed.">-->
 
+<!--        </TextView>-->
     </LinearLayout>
-
-
-    <com.example.hwalasdk.HwalaKeyboard
-        android:id="@+id/keyboard_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:layout_alignParentBottom="true"
-        android:keyPreviewLayout="@layout/key_preview"
-        ></com.example.hwalasdk.HwalaKeyboard>
+    <include layout="@layout/hwala_keyboard"></include>
 </LinearLayout>

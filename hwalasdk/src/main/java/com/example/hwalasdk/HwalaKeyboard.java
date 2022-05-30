@@ -38,9 +38,11 @@ public class HwalaKeyboard extends LinearLayout implements View.OnClickListener 
     private Button mButton8;
     private Button mButton9;
     private Button mButton0;
-    private Button mButtonDelete;
-    private Button mButtonEnter;
-    private Button mButtonDisable;
+    private LinearLayout mButtonDelete,mButtonEnter;
+    private Button mButtonplus;
+    private Button mButtondash;
+    private Button mButtondot;
+    private Button mButtoncomma;
 
 
     // This will map the button resource id to the String value that we want to
@@ -64,9 +66,13 @@ public class HwalaKeyboard extends LinearLayout implements View.OnClickListener 
         mButton8 = (Button) findViewById(R.id.button_8);
         mButton9 = (Button) findViewById(R.id.button_9);
         mButton0 = (Button) findViewById(R.id.button_0);
-        mButtonDelete = (Button) findViewById(R.id.button_delete);
-        mButtonEnter = (Button) findViewById(R.id.button_enter);
-        mButtonDisable = (Button) findViewById(R.id.button_disable);
+        mButtonDelete = (LinearLayout) findViewById(R.id.button_delete);
+        mButtonEnter = (LinearLayout) findViewById(R.id.button_enter);
+//        mButtonDisable = (Button) findViewById(R.id.button_disable);
+          mButtonplus = (Button) findViewById(R.id.button_plus);
+          mButtondash = (Button) findViewById(R.id.button_dash);
+          mButtondot = (Button) findViewById(R.id.button_point);
+          mButtoncomma = (Button) findViewById(R.id.button_comma);
 
 
         // set button click listeners
@@ -82,7 +88,11 @@ public class HwalaKeyboard extends LinearLayout implements View.OnClickListener 
         mButton0.setOnClickListener(this);
         mButtonDelete.setOnClickListener(this);
         mButtonEnter.setOnClickListener(this);
-        mButtonDisable.setOnClickListener(this);
+//        mButtonDisable.setOnClickListener(this);
+        mButtonplus.setOnClickListener(this);
+        mButtondash.setOnClickListener(this);
+        mButtondot.setOnClickListener(this);
+        mButtoncomma.setOnClickListener(this);
 
         // map buttons IDs to input strings
         keyValues.put(R.id.button_1, "1");
@@ -96,6 +106,10 @@ public class HwalaKeyboard extends LinearLayout implements View.OnClickListener 
         keyValues.put(R.id.button_9, "9");
         keyValues.put(R.id.button_0, "0");
         keyValues.put(R.id.button_enter, "\n");
+        keyValues.put(R.id.button_plus, "+");
+        keyValues.put(R.id.button_dash, "-");
+        keyValues.put(R.id.button_point, ".");
+        keyValues.put(R.id.button_comma, "'");
     }
 
     @Override
@@ -113,9 +127,11 @@ public class HwalaKeyboard extends LinearLayout implements View.OnClickListener 
                 // delete the selection
                 inputConnection.commitText("", 1);
             }
-        }else if(v.getId() == R.id.button_disable) {
+        }
+        else if(v.getId() == R.id.button_enter) {
             setVisibility(View.GONE);
-        }else {
+        }
+        else {
             String value = keyValues.get(v.getId());
             inputConnection.commitText(value, 1);
         }

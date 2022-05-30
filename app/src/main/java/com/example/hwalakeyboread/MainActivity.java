@@ -1,6 +1,11 @@
 package com.example.hwalakeyboread;
 
+import static android.Manifest.permission.READ_PHONE_NUMBERS;
+import static android.Manifest.permission.READ_PHONE_STATE;
+import static android.Manifest.permission.READ_SMS;
+
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -16,6 +21,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
+import android.telephony.TelephonyManager;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
@@ -25,37 +31,22 @@ import com.example.hwalasdk.Global;
 
 public class MainActivity extends AppCompatActivity {
         String text="";
-    int PERMISSION_REQUEST_CONTACT = 1;
-
+    public final int PERMISSION_REQUEST_CONTACT = 1;
+//    TextView t;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.hide();
+        }
         GetDataFromIntent(getIntent());
-        TextView t=findViewById(R.id.tvtext);
-        t.setText(text);
 
         requestPermission();
-
-//        InputMethodManager imeManager =
-//                (InputMethodManager)
-//
-//                        getApplicationContext().getSystemService(INPUT_METHOD_SERVICE);
-//        imeManager.showInputMethodPicker();
-//        askForContactPermission();
-    }
-    public static Boolean getBooleanFromPreferences(Context context, String key) {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        Boolean result = sharedPreferences.getBoolean(key, false);
-        return result;
+        GetNumber();
     }
 
-    public static void saveBooleanInPreferences(Context context, Boolean value, String key) {
-        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        android.content.SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putBoolean(key, value);
-        editor.apply();
-    }
     public void showKeyboread(){
 //        if(!getBooleanFromPreferences(this,"frist")) {
             Intent enableIntent = new Intent(Settings.ACTION_INPUT_METHOD_SETTINGS);
@@ -66,17 +57,6 @@ public class MainActivity extends AppCompatActivity {
     }
     public void GetDataFromIntent(Intent in){
         text=in.getStringExtra(Global.keyvalue);
-    }
-    public void askForContactPermission(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (ContextCompat.checkSelfPermission(this,Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
-                if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_CONTACTS)) {
-                    showDialog();
-                }
-            }
-        } else {
-            showDialog();
-        }
     }
     public void showDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -94,40 +74,42 @@ public class MainActivity extends AppCompatActivity {
         });
         builder.show();
     }
-    // Check whether user has phone contacts manipulation permission or not.
-    private boolean hasPhoneContactsPermission(String permission)
-    {
-        boolean ret = false;
-        // If android sdk version is bigger than 23 the need to check run time permission.
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            // return phone read contacts permission grant status.
-            int hasPermission = ContextCompat.checkSelfPermission(getApplicationContext(), permission);
-            // If permission is granted then return true.
-            if (hasPermission == PackageManager.PERMISSION_GRANTED) {
-                ret = true;
-            }
-        }else
-        {
-            ret = true;
-        }
-        return ret;
-    }
     // Request a runtime permission to app user.
     private void requestPermission()
     {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if( getApplicationContext().checkSelfPermission( Manifest.permission.READ_CONTACTS ) != PackageManager.PERMISSION_GRANTED )
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CONTACTS}, PERMISSION_REQUEST_CONTACT);
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CONTACTS,READ_SMS, READ_PHONE_NUMBERS, READ_PHONE_STATE}, PERMISSION_REQUEST_CONTACT);
         }else{
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CONTACTS}, PERMISSION_REQUEST_CONTACT);
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_CONTACTS,READ_SMS, READ_PHONE_NUMBERS, READ_PHONE_STATE}, PERMISSION_REQUEST_CONTACT);
 
         }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+//            requestPermissions(new String[]{}, 100);
+//        }
     }
-    // After user select Allow or Deny button in request runtime permission dialog
-    // , this method will be invoked.
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case PERMISSION_REQUEST_CONTACT:
+                TelephonyManager telephonyManager = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
+                if (ActivityCompat.checkSelfPermission(this, READ_SMS) !=
+                        PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,
+                        READ_PHONE_NUMBERS) != PackageManager.PERMISSION_GRANTED &&
+                        ActivityCompat.checkSelfPermission(this, READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+                    return;
+                }
+                String phoneNumber = telephonyManager.getLine1Number();
+
+                if(phoneNumber.equals("")){
+                    String   MyPhoneNumber = telephonyManager.getSubscriberId();
+                }
+//                t.setText(phoneNumber);
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + requestCode);
+        }
         int length = grantResults.length;
         if(length > 0)
         {
@@ -143,5 +125,25 @@ public class MainActivity extends AppCompatActivity {
 
     public void enable(View view) {
         showKeyboread();
+    }
+
+    public void GetNumber() {
+
+        if (ActivityCompat.checkSelfPermission(this, READ_SMS) == PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(this, READ_PHONE_NUMBERS) ==
+                        PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,
+                READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
+            // Permission check
+
+            // Create obj of TelephonyManager and ask for current telephone service
+            TelephonyManager telephonyManager = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
+            String phoneNumber = telephonyManager.getLine1Number();
+
+//            t.setText(phoneNumber);
+            return;
+        } else {
+            // Ask for permission
+            requestPermission();
+        }
     }
 }

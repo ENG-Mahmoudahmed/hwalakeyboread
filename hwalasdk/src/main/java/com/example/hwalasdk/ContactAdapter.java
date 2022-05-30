@@ -12,10 +12,12 @@ import java.util.ArrayList;
 public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHolder> {
 
     private ArrayList<ContactDTO> mDataset;
+    protected ItemListener mListener;
 
     // Provide a suitable constructor (depends on the kind of dataset)
-    public ContactAdapter(ArrayList<ContactDTO> myDataset) {
+    public ContactAdapter(ArrayList<ContactDTO> myDataset, ItemListener itemListener) {
         mDataset = myDataset;
+        mListener=itemListener;
     }
 
     // Create new views (invoked by the layout manager)
@@ -34,40 +36,40 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         final ContactDTO name = mDataset.get(position);
-        holder.txtHeader.setText(mDataset.get(position).getFamilyName());
+        holder.txtHeader.setText(mDataset.get(position).getNumber());
         holder.txtFooter.setText(mDataset.get(position).getDisplayName());
+        holder.item=name;
     }
-    public void add(int position, ContactDTO item) {
-        mDataset.add(position, item);
-        notifyItemInserted(position);
-    }
-
-    public void remove(ContactDTO item) {
-        int position = mDataset.indexOf(item);
-        mDataset.remove(position);
-        notifyItemRemoved(position);
-    }
-
     // Return the size of your dataset (invoked by the layout manager)
     @Override
     public int getItemCount() {
         return mDataset.size();
     }
 
+    public interface ItemListener {
+        void onItemClick(ContactDTO item);
+    }
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and you provide
     //access to all the views for a data item in a view holder
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         // each data item is just a string in this case
         public TextView txtHeader;
         public TextView txtFooter;
+        private ContactDTO item;
 
         public ViewHolder(View v) {
             super(v);
+            v.setOnClickListener(this);
             txtHeader = (TextView) v.findViewById(R.id.firstLine);
             txtFooter = (TextView) v.findViewById(R.id.secondLine);
         }
-
+        @Override
+        public void onClick(View view) {
+            if (mListener != null) {
+                mListener.onItemClick(item);
+            }
+        }
 
 
 

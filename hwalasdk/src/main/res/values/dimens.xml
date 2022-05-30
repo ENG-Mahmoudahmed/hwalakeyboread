@@ -24,13 +24,49 @@
     <dimen name="screen_5_space_pin_code">20dp</dimen>
 
 
-    <dimen name="iv_back_h_w">30dp</dimen>
+    <dimen name="iv_back_h_w">20dp</dimen>
     <dimen name="iv_back_h">30dp</dimen>
     <dimen name="iv_back_m">20dp</dimen>
+    <dimen name="iv_back_m_top">4dp</dimen>
+    <dimen name="iv_back_m_bottom">2dp</dimen>
+    <dimen name="iv_back_m_left">20dp</dimen>
+    <dimen name="iv_back_m_right">20dp</dimen>
 
     <dimen name="iv_next_h">50dp</dimen>
     <dimen name="iv_next_w">250dp</dimen>
     <dimen name="iv_next_m">30dp</dimen>
+    <dimen name="iv_next_m_top">4dp</dimen>
+    <dimen name="iv_next_m_bottom">2dp</dimen>
+    <dimen name="iv_next_m_left">20dp</dimen>
+    <dimen name="iv_next_m_right">20dp</dimen>
+
+    <dimen name="iv_ImageView_m">30dp</dimen>
+    <dimen name="iv_ImageView_m_top">4dp</dimen>
+    <dimen name="iv_ImageView_m_bottom">2dp</dimen>
+    <dimen name="iv_ImageView_m_left">20dp</dimen>
+    <dimen name="iv_ImageView_m_right">20dp</dimen>
+
+    <dimen name="card_view_h">50dp</dimen>
+    <dimen name="card_view_w">250dp</dimen>
+    <dimen name="card_view_m_top">3dp</dimen>
+    <dimen name="card_view_m_bottom">15dp</dimen>
+    <dimen name="card_view_CornerRadius">10dp</dimen>
+    <dimen name="card_view_cardElevation">0dp</dimen>
+    <dimen name="card_view_cardElevation_back">3dp</dimen>
+
+    <dimen name="circleimageview_h">50dp</dimen>
+    <dimen name="circleimageview_w">250dp</dimen>
+    <dimen name="circleimageviewt_m_end">15dp</dimen>
+    <dimen name="circleimageviewt_civ_border_width">2dp</dimen>
+
+    <dimen name="tv_layout_margin_Bottom">2dp</dimen>
+    <dimen name="tv_text_size">16dp</dimen>
+
+    <dimen name="screen4_Linear_Layout_margin_top">5dp</dimen>
+    <dimen name="screen4_Linear_Layout_margin_Bottom">5dp</dimen>
+    <dimen name="screen4_Linear_Layout_margin_right">30dp</dimen>
+    <dimen name="screen4_Linear_Layout_margin_left">30dp</dimen>
 
 
+    <dimen name="new_Linear_Layout_style_horizontal_lrg_padding">14dp</dimen>
 </resources>

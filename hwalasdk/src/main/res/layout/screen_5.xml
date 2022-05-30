@@ -1,118 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:card_view="http://schemas.android.com/tools"
-    android:layout_centerHorizontal="true"
-    android:layout_centerVertical="true"
-    android:paddingTop="@dimen/keyboread_padding_top"
+    android:layout_height="match_parent"
     android:orientation="vertical">
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:background="@color/positive" />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="350dp"
         android:background="@color/ray"
         android:orientation="vertical">
         <include layout="@layout/back"></include>
         <androidx.cardview.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/card_view_outer_contact"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="15dp"
-            card_view:cardBackgroundColor="@android:color/transparent"
-            card_view:cardCornerRadius="10dp"
-            card_view:cardElevation="3dp" >
-
+            style="@style/card_view_style_back" >
             <androidx.cardview.widget.CardView
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/card_view_inner_contact"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="3dp"
-                card_view:cardBackgroundColor="@color/omega"
-                card_view:cardCornerRadius="10dp"
-                card_view:cardElevation="0dp" >
+                style="@style/card_view_style" >
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/omega"
-                    android:padding="@dimen/lrg"
+                    android:layout_height="match_parent"
+                    android:background="@color/ray"
                     android:orientation="vertical">
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.2"
+                        android:textSize="@dimen/tv_text_size"
+                        android:gravity="center"
+                        android:textFontWeight="@android:integer/config_mediumAnimTime"
                         style="@style/AppTheme"
-                        android:layout_marginBottom="10dp"
                         android:text="@string/screen_5_header"></TextView>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/AppTheme"
-                        android:layout_marginBottom="10dp"
-                        android:text="@string/screen_5_disc"></TextView>
-                    <ImageView
-                        android:layout_width="90dp"
-                        android:layout_height="2dp"
-                        android:layout_gravity="center"
-                        android:background="@color/positive" />
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="@dimen/lrg"
-                        android:layout_marginBottom="@dimen/lrg"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.4"
+                        style="@style/Linear_Layout_style_horizontal"
                         >
                         <EditText
                             android:id="@+id/ed_screen_5_pin_1"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
                             android:inputType="numberPassword"
-                            android:background="@drawable/imagecorner"
+                            android:background="@drawable/round"
+
                             android:layout_marginLeft="@dimen/screen_5_space_pin_code"
                             android:layout_marginRight="@dimen/screen_5_space_pin_code"
+                            android:gravity="center"
                             android:maxLength="1"
                             ></EditText>
                         <EditText
                             android:id="@+id/ed_screen_5_pin_2"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
                             android:inputType="numberPassword"
-                            android:background="@drawable/imagecorner"
+                            android:background="@drawable/round"
                             android:maxLength="1"
+                            android:gravity="center"
                             ></EditText>
                         <EditText
                             android:id="@+id/ed_screen_5_pin_3"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
                             android:inputType="numberPassword"
-                            android:background="@drawable/imagecorner"
+                            android:background="@drawable/round"
                             android:layout_marginLeft="@dimen/screen_5_space_pin_code"
                             android:maxLength="1"
+                            android:gravity="center"
                             ></EditText>
                         <EditText
                             android:id="@+id/ed_screen_5_pin_4"
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
                             android:inputType="numberPassword"
-                            android:background="@drawable/imagecorner"
+                            android:background="@drawable/round"
                             android:layout_marginLeft="@dimen/screen_5_space_pin_code"
                             android:layout_marginRight="@dimen/screen_5_space_pin_code"
                             android:maxLength="1"
+                            android:gravity="center"
                             ></EditText>
                     </LinearLayout>
                     <LinearLayout
+                        style="@style/Linear_Layout_style_horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.3"
                         android:gravity="center">
                         <ImageView
                             android:id="@+id/bt_screen_5_resend"
@@ -120,11 +92,10 @@
                             android:layout_height="20dp"
                             android:src="@drawable/ic_icons_resend"></ImageView>
                         <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/screen_5_resend"
-                            android:textColor="@color/misty"
-                            android:background=" #00555555"></Button>
+                            android:id="@+id/bt_resend_screen"
+                            style="@style/normal_button_style"
+                            android:layout_height="45dp"
+                            android:text="@string/screen_5_resend"></Button>
                     </LinearLayout>
                     <Button
                         android:id="@+id/bt_next_screen"
@@ -133,13 +104,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </androidx.cardview.widget.CardView>
-    </LinearLayout>
-    <com.example.hwalasdk.HwalaKeyboard
-        android:id="@+id/keyboard_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+           </LinearLayout>
+    <include layout="@layout/hwala_keyboard"></include>
 
-        android:layout_alignParentBottom="true"
-        android:keyPreviewLayout="@layout/key_preview"
-        ></com.example.hwalasdk.HwalaKeyboard>
 </LinearLayout>

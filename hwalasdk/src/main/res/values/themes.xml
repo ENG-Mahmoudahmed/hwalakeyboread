@@ -10,17 +10,6 @@
         <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
         <item name="android:buttonStyle">@style/RobotoButtonStyle</item>
     </style>
-
-    <style name="next_button_style" parent="Theme.AppCompat.Light">
-        <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
-        <item name="android:buttonStyle">@style/RobotoButtonStyle</item>
-
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/iv_next_h</item>
-        <item name="android:layout_margin">@dimen/iv_next_m</item>
-        <item name="android:textColor">@color/omega</item>
-        <item name="android:background">@drawable/hwalabutton</item>
-    </style>
     <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
         <item name="android:fontFamily">Mulish</item>
     </style>
@@ -28,4 +17,102 @@
     <style name="RobotoButtonStyle" parent="android:Widget.Holo.Button">
         <item name="android:fontFamily">Mulish</item>
     </style>
+
+    <style name="next_button_style" parent="Theme.AppCompat.Light">
+        <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
+        <item name="android:buttonStyle">@style/RobotoButtonStyle</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/iv_next_h</item>
+        <item name="android:layout_marginTop">@dimen/iv_next_m_top</item>
+        <item name="android:layout_marginBottom">@dimen/iv_next_m_bottom</item>
+        <item name="android:layout_marginRight">@dimen/iv_next_m_right</item>
+        <item name="android:layout_marginLeft">@dimen/iv_next_m_left</item>
+        <item name="android:textColor">@color/omega</item>
+        <item name="android:background">@drawable/hwalabutton</item>
+    </style>
+    <style name="normal_button_style" parent="Theme.AppCompat.Light">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/iv_next_m_top</item>
+        <item name="android:layout_marginBottom">@dimen/iv_next_m_bottom</item>
+        <item name="android:layout_marginRight">@dimen/iv_next_m_right</item>
+        <item name="android:layout_marginLeft">@dimen/iv_next_m_left</item>
+        <item name="android:textColor">@color/positive</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="text_view_style" parent="Theme.AppCompat.Light">
+        <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/tv_text_size</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/tv_layout_margin_Bottom</item>
+    </style>
+    <style name="edit_view_style" parent="Theme.AppCompat.Light">
+        <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="card_view_style" parent="Theme.AppCompat.Light">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginTop">@dimen/card_view_m_top</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="cardBackgroundColor">@color/omega</item>
+        <item name="cardCornerRadius">@dimen/card_view_CornerRadius</item>
+        <item name="cardElevation">@dimen/card_view_cardElevation</item>
+    </style>
+    <style name="card_view_style_back" parent="Theme.AppCompat.Light">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="cardBackgroundColor">@android:color/transparent</item>
+        <item name="cardCornerRadius">@dimen/card_view_CornerRadius</item>
+        <item name="cardElevation">@dimen/card_view_cardElevation_back</item>
+    </style>
+    <style name="circle_image_view_style_" parent="Theme.AppCompat.Light">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginEnd">@dimen/circleimageviewt_m_end</item>
+        <item name="background">@drawable/imagecorner</item>
+        <item name="civ_border_color">@color/omega</item>
+        <item name="civ_border_width">@dimen/circleimageviewt_civ_border_width</item>
+    </style>
+    <style name="image_view_style_" parent="Theme.AppCompat.Light">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginEnd">@dimen/circleimageviewt_m_end</item>
+        <item name="background">@drawable/imagecorner</item>
+    </style>
+    <style name="Linear_Layout_style_vertical" parent="Theme.AppCompat.Light">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">@dimen/lrg</item>
+        <item name="android:background">@drawable/cardcorner</item>
+    </style>
+    <style name="screen4_Linear_Layout_style_vertical" parent="Theme.AppCompat.Light">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/cardcorner</item>
+    </style>
+    <style name="screen6_Linear_Layout_style_vertical" parent="Theme.AppCompat.Light">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/cardcorner</item>
+    </style>
+    <style name="Linear_Layout_style_horizontal" parent="Theme.AppCompat.Light">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+
+        <item name="android:padding">@dimen/new_Linear_Layout_style_horizontal_lrg_padding</item>
+        <item name="android:background">@drawable/cardcorner</item>
+    </style>
+
 </resources>

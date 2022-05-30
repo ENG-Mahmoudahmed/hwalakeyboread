@@ -1,215 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:card_view="http://schemas.android.com/tools"
-    android:layout_centerHorizontal="true"
-    android:layout_centerVertical="true"
-    android:paddingTop="@dimen/keyboread_padding_top"
+    android:layout_height="match_parent"
     android:orientation="vertical">
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:background="@color/positive" />
-    <LinearLayout
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@color/ray"
-        android:orientation="vertical">
-      <include layout="@layout/back"></include>
-        <androidx.cardview.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/card_view_outer_contact"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="15dp"
-            card_view:cardBackgroundColor="@android:color/transparent"
-            card_view:cardCornerRadius="10dp"
-            card_view:cardElevation="3dp" >
-
-            <androidx.cardview.widget.CardView
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/card_view_inner_contact"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="3dp"
-                card_view:cardBackgroundColor="@color/omega"
-                card_view:cardCornerRadius="10dp"
-                card_view:cardElevation="0dp" >
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/omega"
-                    android:padding="@dimen/lrg"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/AppTheme"
-                        android:layout_marginBottom="10dp"
-                        android:text="@string/tv_transfer_money"></TextView>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        >
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:id="@+id/icon"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_icons_profile"
-                            android:background="@color/omega"
-                            android:layout_gravity="center"
-                            app:civ_border_color="@color/omega"
-                            android:layout_marginEnd="10dp"
-                            app:civ_border_width="2dp">
-                        </de.hdodenhof.circleimageview.CircleImageView>
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:layout_gravity="center">
-                            <TextView
-                                android:id="@+id/secondLine"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="name"
-                                />
-                            <TextView
-                                android:id="@+id/firstLine"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Example application"
-                                />
-                        </LinearLayout>
-                        <Button
-                            android:id="@+id/bt_screen_4_change"
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:layout_margin="30dp"
-                            android:textColor="@color/positive"
-                            android:background=" #00555555"
-                            android:text="@string/screen_4_change"/>
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/card_view_outer_number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-
-            card_view:cardBackgroundColor="@android:color/transparent"
-            card_view:cardCornerRadius="10dp"
-            card_view:cardElevation="3dp" >
-
-            <androidx.cardview.widget.CardView
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/card_view_inner_number"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="3dp"
-                card_view:cardBackgroundColor="@color/omega"
-                card_view:cardCornerRadius="10dp"
-                card_view:cardElevation="0dp" >
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/omega"
-                    android:padding="@dimen/lrg"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/AppTheme"
-                        android:layout_marginBottom="10dp"
-                        android:text="@string/screen_4_transfer_money_from"></TextView>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        >
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_icons_wallet"
-                            android:background="@color/omega"
-                            android:layout_gravity="center"
-                            app:civ_border_color="@color/omega"
-                            android:layout_marginEnd="10dp"
-                            app:civ_border_width="2dp">
-                        </de.hdodenhof.circleimageview.CircleImageView>
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:layout_gravity="center">
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="@string/screen_4_e_wallet"
-                                />
-                            <TextView
-                                android:id="@+id/tv_screen_4_e_wallet_number"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="+20**********1234"
-                                />
-                        </LinearLayout>
-<!--                        <Button-->
-<!--                            android:id="@+id/bt_screen_4_change_wallet"-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="50dp"-->
-<!--                            android:layout_margin="30dp"-->
-<!--                            android:textColor="@color/positive"-->
-<!--                            android:background=" #00555555"-->
-<!--                            android:text="@string/screen_4_change"/>-->
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-        </androidx.cardview.widget.CardView>
+        android:orientation="vertical"
+        >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="7dp"
-            android:layout_marginLeft="7dp">
-            <TextView
+            android:background="@color/ray"
+            android:orientation="vertical">
+            <include layout="@layout/back"></include>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/AppTheme"
-                android:text="@string/screen_4_enter_amount"
-                android:layout_marginBottom="2dp"
-                />
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+                <!--            <androidx.cardview.widget.CardView-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="match_parent"-->
+                <!--                style="@style/card_view_style_back"-->
+                <!--                android:layout_marginRight="5dp">-->
+                <!--                <androidx.cardview.widget.CardView-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="match_parent"-->
+                <!--                    style="@style/card_view_style"-->
+                <!--                    android:layout_marginRight="5dp">-->
+                <LinearLayout
+                    android:background="@drawable/round"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    style="@style/screen4_Linear_Layout_style_vertical"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginRight="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:padding="@dimen/new_Linear_Layout_style_horizontal_lrg_padding"
+
+                        >
+                        <TextView
+                            style="@style/text_view_style"
+                            android:text="@string/screen_4_transfer_money_from"
+                            android:paddingRight="@dimen/screen_5_space_pin_code"/>
+                        <TextView
+                            style="@style/text_view_style"
+                            android:text="@string/screen_4_e_wallet"
+                            />
+                    </LinearLayout>
+                    <TextView
+                        style="@style/text_view_style"
+                        android:id="@+id/tv_screen_4_e_wallet_number"
+                        android:text="+20**********1234"
+
+                        />
+                    <Button
+                        android:id="@+id/bt_screen_4_change_wallet"
+                        style="@style/normal_button_style"
+                        android:text="@string/screen_4_change"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:background="@drawable/round"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    style="@style/screen4_Linear_Layout_style_vertical"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:padding="@dimen/new_Linear_Layout_style_horizontal_lrg_padding"
+                        >
+                        <TextView
+                            style="@style/text_view_style"
+                            android:text="@string/tv_transfer_money"
+                            android:paddingRight="@dimen/screen_5_space_pin_code"/>
+                        <TextView
+                            android:id="@+id/firstLine"
+                            style="@style/text_view_style"
+                            android:text="dsadfdsf" />
+                    </LinearLayout>
+                    <TextView
+                        android:layout_gravity="center"
+                        android:text="dfgffgfd"
+                        android:id="@+id/secondLine"
+                        style="@style/text_view_style"
+                        />
+                    <Button
+                        android:id="@+id/bt_screen_4_change"
+                        style="@style/normal_button_style"
+                        android:text="@string/screen_4_change"/>
+                </LinearLayout>
+
+            </LinearLayout>
             <EditText
                 android:id="@+id/et_screen_4_money_amount"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/edit_view_style"
+
                 android:hint="@string/screen_4_hint_money"
+                android:drawablePadding="@dimen/screen_5_space_pin_code"
+                android:drawableLeft="@drawable/ic_icons_currency"
+                android:focusedByDefault="true"
                 />
+            <Button
+                android:id="@+id/bt_next_screen"
+                style="@style/next_button_style"
+                android:text="@string/bt_proceed"/>
         </LinearLayout>
-        <Button
-            android:id="@+id/bt_next_screen"
-            style="@style/next_button_style"
-            android:text="@string/bt_proceed"/>
-
-    </LinearLayout>
-
-
-    <com.example.hwalasdk.HwalaKeyboard
-        android:id="@+id/keyboard_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:layout_alignParentBottom="true"
-        android:keyPreviewLayout="@layout/key_preview"
-        ></com.example.hwalasdk.HwalaKeyboard>
+    </ScrollView>
+    <include layout="@layout/hwala_keyboard"></include>
 </LinearLayout>
