@@ -1,5 +1,7 @@
 package com.example.hwalasdk;
 
+import static android.inputmethodservice.Keyboard.KEYCODE_DELETE;
+
 import android.database.Cursor;
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
@@ -150,7 +152,7 @@ public class Screen3  implements ContactAdapter.ItemListener , KeyboardView.OnKe
         InputConnection ic = inputMethodService.getCurrentInputConnection();
         if (ic == null) return;
         switch (i) {
-            case com.example.hwalasdk.Keyboard.KEYCODE_DELETE:
+            case KEYCODE_DELETE:
                 CharSequence selectedText = ic.getSelectedText(0);
                 if (TextUtils.isEmpty(selectedText)) {
                     // no selection, so delete previous character

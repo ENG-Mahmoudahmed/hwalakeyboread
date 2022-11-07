@@ -15,7 +15,7 @@ public class MyInputMethodService extends InputMethodService{
     @Override
     public View onCreateInputView() {
 
-        View  root = getLayoutInflater().inflate(R.layout.test, null);
+        View  root = getLayoutInflater().inflate(R.layout.screen_1, null);
         (new Screen1()).InitScreen1(this);
 
         return root;
