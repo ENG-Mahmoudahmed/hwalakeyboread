@@ -23,7 +23,9 @@ import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,6 +47,19 @@ public class MainActivity extends AppCompatActivity {
 
         requestPermission();
         GetNumber();
+//        // Creates a button that mimics a crash when pressed
+//        Button crashButton = new Button(this);
+//        crashButton.setText("Test Crash");
+//        crashButton.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View view) {
+//                throw new RuntimeException("Test Crash"); // Force a crash
+//            }
+//        });
+//
+//        addContentView(crashButton, new ViewGroup.LayoutParams(
+//                ViewGroup.LayoutParams.MATCH_PARENT,
+//                ViewGroup.LayoutParams.WRAP_CONTENT));
+
     }
 
     public void showKeyboread(){
@@ -93,19 +108,23 @@ public class MainActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
             case PERMISSION_REQUEST_CONTACT:
-                TelephonyManager telephonyManager = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
-                if (ActivityCompat.checkSelfPermission(this, READ_SMS) !=
-                        PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,
-                        READ_PHONE_NUMBERS) != PackageManager.PERMISSION_GRANTED &&
-                        ActivityCompat.checkSelfPermission(this, READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
-                    return;
-                }
-                String phoneNumber = telephonyManager.getLine1Number();
+                try {
+                    TelephonyManager telephonyManager = (TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE);
+                    if (ActivityCompat.checkSelfPermission(this, READ_SMS) !=
+                            PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this,
+                            READ_PHONE_NUMBERS) != PackageManager.PERMISSION_GRANTED &&
+                            ActivityCompat.checkSelfPermission(this, READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+                        return;
+                    }
+                    String phoneNumber = telephonyManager.getLine1Number();
 
-                if(phoneNumber.equals("")){
-                    String   MyPhoneNumber = telephonyManager.getSubscriberId();
-                }
+                    if (phoneNumber.equals("")) {
+                        String MyPhoneNumber = telephonyManager.getSubscriberId();
+                    }
 //                t.setText(phoneNumber);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + requestCode);

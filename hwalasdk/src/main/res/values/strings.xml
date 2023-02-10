@@ -7,8 +7,8 @@
     <string name="tv_open">Open contacts list</string>
     <string name="tv_transfer_money">To </string>
     <string name="et_hint">Mobile number</string>
-
-
+    <string name="space_tite_ar">AR</string>
+    <string name="space_tite_en">EN</string>
     <string name="screen_4_transfer_money_from">From </string>
     <string name="screen_4_enter_amount">Enter amount</string>
     <string name="screen_4_change">Change</string>

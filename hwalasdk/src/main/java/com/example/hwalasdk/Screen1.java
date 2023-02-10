@@ -13,15 +13,16 @@ import android.widget.Toast;
 
 public class Screen1 {
     Button btnext;
-    public void InitScreen1(InputMethodService inputMethodService){
-        View root = inputMethodService.getLayoutInflater().inflate(R.layout.screen_1, null);
-        inputMethodService.getWindow().setContentView(root);
-        btnext = root.findViewById(R.id.bt_next_screen);
+    public void InitScreen1(InputMethodService inputMethodService, View root){
+//        View root = inputMethodService.getLayoutInflater().inflate(R.layout.screen_1, null);
+//        inputMethodService.getWindow().setContentView(root);
+        View rootscreen=Global.ShowAndHide(root, Global.Screen.screen1);
+        btnext = rootscreen.findViewById(R.id.bt_next_screen);
         btnext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    (new Screen2()).InitScreen2(inputMethodService,"");
+                    (new Screen2()).InitScreen2(inputMethodService,root,"");
                 } catch (Exception e) {
                     e.printStackTrace();
                 Toast.makeText(inputMethodService.getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();

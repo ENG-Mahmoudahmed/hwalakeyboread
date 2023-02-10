@@ -21,41 +21,42 @@ public class Screen5 {
     String number;
     String amount;
 
-    public void InitScreen5(InputMethodService inputMethodService,String name,String number,String amount,ScreenName BackScreen){
+    public void InitScreen5(InputMethodService inputMethodService,String name,String number,String amount,ScreenName BackScreen,View root){
         this.name=name;
         this.number=number;
         this.amount=amount;
-        View view2 = inputMethodService.getLayoutInflater().inflate(R.layout.screen_5, null);
-        inputMethodService.getWindow().setContentView(view2);
-        imback = view2.findViewById(R.id.im_back);
+//        View view2 = inputMethodService.getLayoutInflater().inflate(R.layout.screen_5, null);
+//        inputMethodService.getWindow().setContentView(view2);
+        View rootscreen=Global.ShowAndHide(root, Global.Screen.screen5);
+        imback = rootscreen.findViewById(R.id.im_back);
         imback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    (new Screen4()).InitScreen4(inputMethodService,name,number,amount,BackScreen);
+                    (new Screen4()).InitScreen4(inputMethodService,name,number,amount,BackScreen,root);
                 } catch (Exception e) {
                     Toast.makeText(inputMethodService.getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         });
-        btnext = view2.findViewById(R.id.bt_next_screen);
+        btnext = rootscreen.findViewById(R.id.bt_next_screen);
         btnext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    (new Screen6()).InitScreen6(inputMethodService,name,number,amount);
+                    (new Screen6()).InitScreen6(inputMethodService,name,number,amount,root);
                 } catch (Exception e) {
                     e.printStackTrace();
                     Toast.makeText(inputMethodService.getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         });
-//        TextView tv_amount=view2.findViewById(R.id.tv_amount);
+//        TextView tv_amount=rootscreen.findViewById(R.id.tv_amount);
 //        tv_amount.setText(inputMethodService.getString(R.string.screen_5_disc).replace("+",number));
-        EditText ed_1=getEditText(view2,R.id.ed_screen_5_pin_1,inputMethodService);
-        EditText ed_2=getEditText(view2,R.id.ed_screen_5_pin_2,inputMethodService);
-        EditText ed_3=getEditText(view2,R.id.ed_screen_5_pin_3,inputMethodService);
-        EditText ed_4=getEditText(view2,R.id.ed_screen_5_pin_4,inputMethodService);
+        EditText ed_1=getEditText(rootscreen,R.id.ed_screen_5_pin_1,inputMethodService);
+        EditText ed_2=getEditText(rootscreen,R.id.ed_screen_5_pin_2,inputMethodService);
+        EditText ed_3=getEditText(rootscreen,R.id.ed_screen_5_pin_3,inputMethodService);
+        EditText ed_4=getEditText(rootscreen,R.id.ed_screen_5_pin_4,inputMethodService);
         ed_1.requestFocus();
         ed_1.addTextChangedListener(new TextWatcher() {
             @Override
@@ -120,10 +121,10 @@ public class Screen5 {
             public void afterTextChanged(Editable editable) {
             }
         });
-        BackView.InitBackView(inputMethodService,view2,kv,"Verification ",null);
+        BackView.InitBackView(inputMethodService,rootscreen,kv,"Verification ",null);
     }
-    public EditText getEditText(View view2,int name,InputMethodService inputMethodService){
-        EditText text= (EditText) view2.findViewById(name);
+    public EditText getEditText(View rootscreen,int name,InputMethodService inputMethodService){
+        EditText text= (EditText) rootscreen.findViewById(name);
         text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -141,7 +142,7 @@ public class Screen5 {
             }
         });
 
-        kv = (HwalaKeyboard) view2.findViewById(R.id.keyboard_view);
+        kv = (HwalaKeyboard) rootscreen.findViewById(R.id.keyboard_view);
         kv.setVisibility(View.GONE);
         android.inputmethodservice.Keyboard keyboard = new Keyboard(inputMethodService, R.xml.number_pad);
         InputConnection ic = text.onCreateInputConnection(new EditorInfo());

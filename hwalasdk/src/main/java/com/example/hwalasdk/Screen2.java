@@ -14,6 +14,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,26 +30,25 @@ public class Screen2 {
     Button btnext;
     String number="";
     EditText text;
-    public void InitScreen2(InputMethodService inputMethodService ,String oldnumber){
-
-        View view2 = inputMethodService.getLayoutInflater().inflate(R.layout.screen_2, null);
-        inputMethodService.getWindow().setContentView(view2);
-        Toast.makeText(inputMethodService.getApplicationContext(), "Please enter  valid phone number", Toast.LENGTH_LONG).show();
-
-
-
-        imback = view2.findViewById(R.id.im_back);
+    public void InitScreen2(InputMethodService inputMethodService
+            ,View root
+            ,String oldnumber){
+        View rootscreen=Global.ShowAndHide(root, Global.Screen.screen2);
+//        View view2 = inputMethodService.getLayoutInflater().inflate(R.layout.screen_2, null);
+//        inputMethodService.getWindow().setContentView(view2);
+//        Toast.makeText(inputMethodService.getApplicationContext(), "Please enter  valid phone number", Toast.LENGTH_LONG).show();
+        imback = rootscreen.findViewById(R.id.im_back);
         imback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    (new Screen1()).InitScreen1(inputMethodService);
+                    (new Screen1()).InitScreen1(inputMethodService,root);
                 } catch (Exception e) {
-                    Toast.makeText(inputMethodService.getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(inputMethodService.getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         });
-        btnext = view2.findViewById(R.id.bt_next_screen);
+        btnext = rootscreen.findViewById(R.id.bt_next_screen);
         btnext.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
@@ -56,7 +56,7 @@ public class Screen2 {
                 try {
                  number =text.getText().toString();
                    if(Pattern.matches("^[+]?[0-9]{10,13}$", number)) {
-                       (new Screen4()).InitScreen4(inputMethodService, "", number, "",ScreenName.Screen_2);
+                       (new Screen4()).InitScreen4(inputMethodService, "", number, "",ScreenName.Screen_2,root);
                    }else {
                        Toast.makeText(inputMethodService.getApplicationContext(), "Please enter  valid phone number", Toast.LENGTH_LONG).show();
                    }
@@ -66,26 +66,23 @@ public class Screen2 {
                 }
             }
         });
-
-
-
-        CircleImageView img_contact = view2.findViewById(R.id.img_contact);
+        CircleImageView img_contact = rootscreen.findViewById(R.id.img_contact);
         img_contact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    (new Screen3()).InitScreen3(inputMethodService,"");
+                    (new Screen3()).InitScreen3(inputMethodService,"",root);
                 } catch (Exception e) {
                     Toast.makeText(inputMethodService.getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         });
-        TextView tv_contact = view2.findViewById(R.id.tv_contact);
+        TextView tv_contact = rootscreen.findViewById(R.id.tv_contact);
         tv_contact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    (new Screen3()).InitScreen3(inputMethodService,"");
+                    (new Screen3()).InitScreen3(inputMethodService,"",root);
                 } catch (Exception e) {
                     e.printStackTrace();
                     Toast.makeText(inputMethodService.getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -93,7 +90,7 @@ public class Screen2 {
             }
         });
 
-        text= (EditText) view2.findViewById(R.id.ed_contact_number);
+        text= (EditText) rootscreen.findViewById(R.id.ed_contact_number);
         text.setText(oldnumber);
         text.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,11 +111,11 @@ public class Screen2 {
                 }
             }
         });
-        kv = (HwalaKeyboard) view2.findViewById(R.id.keyboard_view);
+        kv = (HwalaKeyboard) rootscreen.findViewById(R.id.keyboard_view);
         kv.setVisibility(View.GONE);
         Keyboard  keyboard = new Keyboard(inputMethodService, R.xml.number_pad);
         InputConnection ic = text.onCreateInputConnection(new EditorInfo());
         kv.setInputConnection(ic); // custom keyboard method
-        BackView.InitBackView(inputMethodService,view2,kv,"Transfer money to",null);
+        BackView.InitBackView(inputMethodService,rootscreen,kv,"Transfer money to",null);
     }
 }

@@ -17,6 +17,7 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -37,13 +38,17 @@ public class Screen3  implements ContactAdapter.ItemListener , KeyboardView.OnKe
     ArrayList<ContactDTO> ContactDTOresult=new ArrayList<>();
     HwalaKeyboardChar kv;
     GifImageView loadingPanel;
-    public void InitScreen3(InputMethodService inputMethodService ,String oldnumber){
+    View root;
+    public void InitScreen3(InputMethodService inputMethodService ,String oldnumber, View root){
+
         this.inputMethodService=inputMethodService;
         new Screen3.DownloadFilesTask().execute(null, null,null);
-        View view2 = inputMethodService.getLayoutInflater().inflate(R.layout.screen_3, null);
-        inputMethodService.getWindow().setContentView(view2);
-         loadingPanel=view2.findViewById(R.id.loadingPanel);
-        ContactRecyclerView = (RecyclerView) view2.findViewById(R.id.recyclview_contacts);
+        View rootscreen=Global.ShowAndHide(root, Global.Screen.screen3);
+        this.root=root;
+//        View view2 = inputMethodService.getLayoutInflater().inflate(R.layout.screen_3, null);
+//        inputMethodService.getWindow().setContentView(view2);
+         loadingPanel=rootscreen.findViewById(R.id.loadingPanel);
+        ContactRecyclerView = (RecyclerView) rootscreen.findViewById(R.id.recyclview_contacts);
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
@@ -52,18 +57,18 @@ public class Screen3  implements ContactAdapter.ItemListener , KeyboardView.OnKe
         // use a linear layout manager
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(inputMethodService);
         ContactRecyclerView.setLayoutManager(mLayoutManager);
-        imback = view2.findViewById(R.id.im_back);
+        imback = rootscreen.findViewById(R.id.im_back);
         imback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    (new Screen2()).InitScreen2(inputMethodService,"");
+                    (new Screen2()).InitScreen2(inputMethodService,root,"");
                 } catch (Exception e) {
                     Toast.makeText(inputMethodService.getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         });
-        EditText screen3_searchview=view2.findViewById(R.id.screen3_searchview);
+        EditText screen3_searchview=rootscreen.findViewById(R.id.screen3_searchview);
         screen3_searchview.requestFocus();
         screen3_searchview.addTextChangedListener(new TextWatcher() {
             @Override
@@ -113,12 +118,12 @@ public class Screen3  implements ContactAdapter.ItemListener , KeyboardView.OnKe
                 }
             }
         });
-        kv = (HwalaKeyboardChar) view2.findViewById(R.id.keyboard_view);
+        kv = (HwalaKeyboardChar) rootscreen.findViewById(R.id.keyboard_view);
         kv.setVisibility(View.GONE);
         android.inputmethodservice.Keyboard keyboard = new Keyboard(inputMethodService, R.xml.char_pad);
         InputConnection ic = screen3_searchview.onCreateInputConnection(new EditorInfo());
         kv.setInputConnection(ic); // custom keyboard method
-        BackView.InitBackView(inputMethodService,view2,null,"My contacts ",kv);
+        BackView.InitBackView(inputMethodService,rootscreen,null,"My contacts ",kv);
 //        KeyboardView keyboardView = (KeyboardView) inputMethodService.getLayoutInflater().inflate(R.layout.keyboard_view, null);
 //        Keyboard keyboard = new Keyboard(inputMethodService, R.xml.char_pad);
 //        keyboardView.setKeyboard(keyboard);
@@ -129,7 +134,7 @@ public class Screen3  implements ContactAdapter.ItemListener , KeyboardView.OnKe
     @Override
     public void onItemClick(ContactDTO item) {
         try {
-            (new Screen4()).InitScreen4(inputMethodService,item.getDisplayName() ,item.getNumber(),"0.0",ScreenName.Screen_3);
+            (new Screen4()).InitScreen4(inputMethodService,item.getDisplayName() ,item.getNumber(),"0.0",ScreenName.Screen_3,root);
         } catch (Exception e) {
             e.printStackTrace();
             Toast.makeText(inputMethodService.getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();

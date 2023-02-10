@@ -38,30 +38,32 @@ public class Screen4 {
     EditText text;
 
 
-    public void InitScreen4(InputMethodService inputMethodService, String name, String number, String totalamount,ScreenName BackScreen) {
-        View view2 = inputMethodService.getLayoutInflater().inflate(R.layout.screen_4, null);
-        inputMethodService.getWindow().setContentView(view2);
-        txtName = (TextView) view2.findViewById(R.id.firstLine);
-        txtNumber = (TextView) view2.findViewById(R.id.secondLine);
-        ((TextView) view2.findViewById(R.id.tv_screen_4_e_wallet_number)).setText(getPhone(inputMethodService));
+    public void InitScreen4(InputMethodService inputMethodService, String name, String number, String totalamount,ScreenName BackScreen, View root) {
+//        View view2 = inputMethodService.getLayoutInflater().inflate(R.layout.screen_4, null);
+//        inputMethodService.getWindow().setContentView(view2);
+        View rootscreen=Global.ShowAndHide(root, Global.Screen.screen4);
+
+        txtName = (TextView) rootscreen.findViewById(R.id.firstLine);
+        txtNumber = (TextView) rootscreen.findViewById(R.id.secondLine);
+        ((TextView) rootscreen.findViewById(R.id.tv_screen_4_e_wallet_number)).setText(getPhone(inputMethodService));
 
         txtName.setText(name);
         txtNumber.setText(number);
 
-        imback = view2.findViewById(R.id.im_back);
+        imback = rootscreen.findViewById(R.id.im_back);
         imback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
                     switch (BackScreen){
                         case Screen_2:
-                            (new Screen2()).InitScreen2(inputMethodService, number);
+                            (new Screen2()).InitScreen2(inputMethodService,root, number);
                             break;
                         case Screen_3:
-                            (new Screen3()).InitScreen3(inputMethodService, number);
+                            (new Screen3()).InitScreen3(inputMethodService, number,root);
                             break;
                         default:
-                            (new Screen2()).InitScreen2(inputMethodService, number);
+                            (new Screen2()).InitScreen2(inputMethodService,root, number);
                             break;
                     }
 
@@ -70,7 +72,7 @@ public class Screen4 {
                 }
             }
         });
-        btnext = view2.findViewById(R.id.bt_next_screen);
+        btnext = rootscreen.findViewById(R.id.bt_next_screen);
         btnext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,7 +80,7 @@ public class Screen4 {
                     amount = text.getText().toString();
                     try{
                         double value = Double.parseDouble(amount);
-                        (new Screen5()).InitScreen5(inputMethodService, name, number, amount,BackScreen);
+                        (new Screen5()).InitScreen5(inputMethodService, name, number, amount,BackScreen,root);
                     }
                     catch (Exception e){
                         Toast.makeText(inputMethodService.getApplicationContext(), "Please enter  valid amount", Toast.LENGTH_LONG).show();
@@ -90,12 +92,12 @@ public class Screen4 {
                 }
             }
         });
-        btchange = view2.findViewById(R.id.bt_screen_4_change);
+        btchange = rootscreen.findViewById(R.id.bt_screen_4_change);
         btchange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
-                    (new Screen3()).InitScreen3(inputMethodService,"");
+                    (new Screen3()).InitScreen3(inputMethodService,"",root);
                 } catch (Exception e) {
                     e.printStackTrace();
                     Toast.makeText(inputMethodService.getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -106,7 +108,7 @@ public class Screen4 {
 
         btnext.setBackground(inputMethodService.getDrawable(R.drawable.hwalabutton_unselected));
         btnext.setEnabled(false);
-        text = (EditText) view2.findViewById(R.id.et_screen_4_money_amount);
+        text = (EditText) rootscreen.findViewById(R.id.et_screen_4_money_amount);
         text.requestFocus();
         text.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -155,12 +157,12 @@ public class Screen4 {
         if(!totalamount.equalsIgnoreCase("0.0")) {
             text.setText(totalamount);
         }
-        kv = (HwalaKeyboard) view2.findViewById(R.id.keyboard_view);
+        kv = (HwalaKeyboard) rootscreen.findViewById(R.id.keyboard_view);
         kv.setVisibility(View.GONE);
         android.inputmethodservice.Keyboard keyboard = new Keyboard(inputMethodService, R.xml.number_pad);
         InputConnection ic = text.onCreateInputConnection(new EditorInfo());
         kv.setInputConnection(ic); // custom keyboard method
-        BackView.InitBackView(inputMethodService,view2,kv,"Transaction details",null);
+        BackView.InitBackView(inputMethodService,rootscreen,kv,"Transaction details",null);
     }
 
     public String getPhone(InputMethodService inputMethodService) {

@@ -77,8 +77,8 @@
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_marginEnd">@dimen/circleimageviewt_m_end</item>
         <item name="background">@drawable/imagecorner</item>
-        <item name="civ_border_color">@color/omega</item>
-        <item name="civ_border_width">@dimen/circleimageviewt_civ_border_width</item>
+<!--        <item name="civ_border_color">@color/omega</item>-->
+<!--        <item name="civ_border_width">@dimen/circleimageviewt_civ_border_width</item>-->
     </style>
     <style name="image_view_style_" parent="Theme.AppCompat.Light">
         <item name="android:layout_width">wrap_content</item>

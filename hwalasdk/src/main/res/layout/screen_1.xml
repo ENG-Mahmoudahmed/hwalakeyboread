@@ -34,4 +34,25 @@
             style="@style/next_button_style"
             android:text="@string/bt_transfer_money"/>
         </LinearLayout>
+        <include
+            android:id="@+id/screen_2"
+            layout="@layout/screen_2"
+            android:visibility="gone"></include>
+        <include
+            android:id="@+id/screen_3"
+            layout="@layout/screen_3"
+            android:visibility="gone"></include>
+        <include
+            android:id="@+id/screen_4"
+            layout="@layout/screen_4"
+            android:visibility="gone"></include>
+        <include android:id="@+id/screen_5"
+            layout="@layout/screen_5"
+            android:visibility="gone"></include>
+        <include  android:id="@+id/screen_6"
+            layout="@layout/screen_6"
+            android:visibility="gone"></include>
+        <include android:id="@+id/screen_7"
+            layout="@layout/screen_7"
+            android:visibility="gone"></include>
 </LinearLayout>
